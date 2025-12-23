@@ -43,7 +43,7 @@ const CursorTracker = () => {
     // State for UI
     const [activeEffect, setActiveEffect] = useState('spectral');
     const [showDoc, setShowDoc] = useState(false);
-    const [isMinimized, setIsMinimized] = useState(false);
+    const [isMinimized, setIsMinimized] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
     // Update ref when state changes
     useEffect(() => {

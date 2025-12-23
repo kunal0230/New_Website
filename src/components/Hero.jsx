@@ -37,31 +37,37 @@ const Hero = () => {
                     {profileData.title}
                 </h2>
 
-                {/* Main Vision Paragraph - narrower */}
-                <p className="physics-obstacle" style={{
-                    fontSize: '1.2rem',
-                    lineHeight: '1.6',
-                    color: 'var(--text-secondary)',
-                    marginBottom: '2.5rem',
-                    maxWidth: '850px'
+                {/* Content Container - uses hero-content class for mobile width override */}
+                <div className="hero-content" style={{
+                    position: 'relative',
+                    zIndex: 2,
+                    width: '55%',
+                    paddingRight: '2rem',
+                    transform: 'translateY(-20px)'
                 }}>
-                    {visionData.content}
-                </p>
+                    <p className="physics-obstacle" style={{
+                        fontSize: '1.2rem',
+                        lineHeight: '1.6',
+                        color: 'var(--text-secondary)',
+                        marginBottom: '2.5rem',
+                        maxWidth: '850px'
+                    }}>
+                        {visionData.content}
+                    </p>
 
-                {/* Availability Box - wider */}
-                <div className="availability-box physics-obstacle" style={{
-                    color: 'var(--accent-primary)',
-                    padding: '1rem 2rem', /* Reduced vertical padding (thin), kept horizontal */
-                    border: '1px solid var(--accent-primary)',
-                    borderRadius: '4px',
-                    fontFamily: 'monospace',
-                    fontSize: '1rem',
-                    lineHeight: '1.6',
-                    maxWidth: '100%', /* Full width of the 1200px container (long) */
-                    width: '100%',
-                    background: 'rgba(15, 118, 110, 0.02)'
-                }}>
-                    <p style={{ margin: 0 }}>{profileData.availability}</p>
+                    <div className="availability-box physics-obstacle" style={{
+                        color: 'var(--accent-primary)',
+                        padding: '1rem 2rem',
+                        border: '1px solid var(--accent-primary)',
+                        borderRadius: '4px',
+                        fontFamily: 'monospace',
+                        fontSize: '1rem',
+                        lineHeight: '1.6',
+                        width: '100%',
+                        background: 'rgba(15, 118, 110, 0.02)'
+                    }}>
+                        <p style={{ margin: 0 }}>{profileData.availability}</p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -34,7 +34,7 @@ const Navbar = () => {
       transition: 'all 0.3s ease',
       padding: '1.5rem 0'
     }}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="container navbar-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <a href="#" style={{
           fontSize: '1.5rem',
           fontWeight: 700,

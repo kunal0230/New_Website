@@ -367,6 +367,27 @@ button {
     /* Disable snap height on mobile */
   }
 
+  /* Hero Text Full Width on Mobile */
+  .hero-content {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  /* Compact Navbar on Mobile */
+  .navbar-container {
+    gap: 1rem !important;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  /* Contact Section Full Height on Mobile */
+  #contact {
+    min-height: 90vh !important;
+    justify-content: center;
+  }
+
   .section-header {
     flex-direction: column;
     align-items: flex-start;

@@ -1,0 +1,67 @@
+{
+    "categories": [
+        {
+            "name": "Core Domains",
+            "items": [
+                "Computer Vision",
+                "Image Processing",
+                "Machine Learning",
+                "Deep Learning",
+                "Stereo Vision",
+                "Object Detection"
+            ]
+        },
+        {
+            "name": "Programming & Languages",
+            "items": [
+                "Python",
+                "MATLAB",
+                "SQL",
+                "Java",
+                "HTML",
+                "CSS",
+                "LaTeX"
+            ]
+        },
+        {
+            "name": "Frameworks & Libraries",
+            "items": [
+                "TensorFlow",
+                "PyTorch",
+                "Keras",
+                "OpenCV",
+                "Scikit-learn",
+                "NumPy",
+                "Pandas",
+                "MediaPipe",
+                "Matplotlib",
+                "Seaborn"
+            ]
+        },
+        {
+            "name": "Architectures & Architectures",
+            "items": [
+                "UNet",
+                "UNet 3+",
+                "ResUNet++",
+                "YOLOv8",
+                "Mask R-CNN",
+                "ResNet",
+                "EfficientDet"
+            ]
+        },
+        {
+            "name": "Optimization & Deployment",
+            "items": [
+                "Quantization",
+                "Pruning",
+                "Mixed Precision",
+                "CUDA",
+                "Apple MPS",
+                "Flask",
+                "FastAPI",
+                "TensorFlow Lite"
+            ]
+        }
+    ]
+}

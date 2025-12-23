@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Polyp Segmentation Using UNet 3+: A Practical Guide",
+        "date": "2024",
+        "summary": "A practical guide on implementing and optimizing UNet 3+ for medical imaging segmentation tasks.",
+        "url": "https://medium.com/@kunalchaugule.2003"
+    },
+    {
+        "id": 2,
+        "title": "How Deepfake Technology Works: A Deep Dive",
+        "date": "2024",
+        "summary": "Explaining the underlying GAN architectures and techniques used in modern deepfake generation.",
+        "url": "https://medium.com/@kunalchaugule.2003"
+    },
+    {
+        "id": 3,
+        "title": "Build a Human Background Remover Web App",
+        "date": "2024",
+        "summary": "Tutorial on creating a background removal tool using Python, Flask, OpenCV, and MediaPipe.",
+        "url": "https://medium.com/@kunalchaugule.2003"
+    }
+]

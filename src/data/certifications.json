@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Neural Networks and Deep Learning",
+        "organization": "DeepLearning.AI",
+        "date": "Jan 2025"
+    },
+    {
+        "id": 2,
+        "title": "ML, NLP, and MLOps Bootcamp",
+        "organization": "Udemy",
+        "date": "Sep 2024"
+    },
+    {
+        "id": 3,
+        "title": "PyTorch for Deep Learning",
+        "organization": "Udemy",
+        "date": "Sep 2024"
+    },
+    {
+        "id": 4,
+        "title": "Computer Vision and Image Processing",
+        "organization": "IBM",
+        "date": "Aug 2024"
+    },
+    {
+        "id": 5,
+        "title": "Understanding Research Methods",
+        "organization": "SOAS Univ. of London",
+        "date": "2024"
+    }
+]

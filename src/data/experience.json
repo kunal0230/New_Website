@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "company": "Saraswati College of Engineering",
+        "role": "Machine Learning Research Assistant",
+        "period": "Dec 2024 - Jun 2025",
+        "description": "Researched and tested image processing methods to improve speed and accuracy of ML-based object detection and tracking. Contributed to research documentation and reviewed related scientific work.",
+        "technologies": [
+            "Machine Learning",
+            "Image Processing",
+            "Research",
+            "Object Tracking"
+        ]
+    },
+    {
+        "id": 2,
+        "company": "The Analyzing company",
+        "role": "Machine Learning Engineer",
+        "period": "Sep 2024 - Mar 2025",
+        "description": "Developed and optimized CNN-based models for intelligent CCTV surveillance, detecting object-specific events and potential property damage with custom rule-based triggers for real-time alerts.",
+        "technologies": [
+            "CNNs",
+            "Surveillance",
+            "Real-time Analysis",
+            "Python"
+        ]
+    },
+    {
+        "id": 3,
+        "company": "Stoffpsot",
+        "role": "Full Stack Developer",
+        "period": "Feb 2024 - Jun 2024",
+        "description": "Led a team of six to develop responsive, scalable web applications. Enhanced client satisfaction by 40% and improved code quality through automated testing and CI/CD integration.",
+        "technologies": [
+            "Full Stack Web",
+            "CI/CD",
+            "Team Leadership",
+            "Testing"
+        ]
+    }
+]

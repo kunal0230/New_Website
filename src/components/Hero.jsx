@@ -55,19 +55,21 @@ const Hero = () => {
                         {visionData.content}
                     </p>
 
-                    <div className="availability-box physics-obstacle" style={{
-                        color: 'var(--accent-primary)',
-                        padding: '1rem 2rem',
-                        border: '1px solid var(--accent-primary)',
-                        borderRadius: '4px',
-                        fontFamily: 'monospace',
-                        fontSize: '1rem',
-                        lineHeight: '1.6',
-                        width: '100%',
-                        background: 'rgba(15, 118, 110, 0.02)'
-                    }}>
-                        <p style={{ margin: 0 }}>{profileData.availability}</p>
-                    </div>
+                </div>
+
+                <div className="availability-box physics-obstacle" style={{
+                    color: 'var(--accent-primary)',
+                    padding: '1rem 2rem',
+                    border: '1px solid var(--accent-primary)',
+                    borderRadius: '4px',
+                    fontFamily: 'monospace',
+                    fontSize: '1rem',
+                    lineHeight: '1.6',
+                    width: '100%',
+                    background: 'rgba(15, 118, 110, 0.02)',
+                    marginTop: '2rem'
+                }}>
+                    <p style={{ margin: 0 }}>{profileData.availability}</p>
                 </div>
             </div>
         </section>

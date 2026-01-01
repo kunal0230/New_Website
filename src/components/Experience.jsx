@@ -22,24 +22,23 @@ const Experience = () => {
                         height: '100%'
                     }}>
                         <div style={{ marginBottom: '1rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.25rem' }}>
-                                <span style={{
-                                    color: 'var(--accent-primary)',
-                                    fontSize: '1rem',
-                                    fontWeight: 500
-                                }}>
-                                    {exp.company}
-                                </span>
-                                <span style={{
-                                    color: 'var(--text-muted)',
-                                    fontSize: '0.8rem',
-                                    fontFamily: 'monospace',
-                                    whiteSpace: 'nowrap'
-                                }}>
-                                    {exp.period}
-                                </span>
-                            </div>
-                            <h4 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', margin: 0, lineHeight: 1.3 }}>{exp.role}</h4>
+                            <h4 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', margin: 0, marginBottom: '0.25rem', lineHeight: 1.3 }}>{exp.role}</h4>
+                            <span style={{
+                                color: 'var(--accent-primary)',
+                                fontSize: '0.95rem',
+                                fontWeight: 500,
+                                display: 'block',
+                                marginBottom: '0.15rem'
+                            }}>
+                                {exp.company}
+                            </span>
+                            <span style={{
+                                color: 'var(--text-muted)',
+                                fontSize: '0.8rem',
+                                fontFamily: 'monospace'
+                            }}>
+                                {exp.period}
+                            </span>
                         </div>
 
                         <p style={{

@@ -88,6 +88,47 @@ const Photography = () => {
                             onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
                             loading="lazy"
                         />
+                        {/* Analyze Icon Button */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedIndex(index);
+                                setShowAnalyzer(true);
+                            }}
+                            title="Analyze Image"
+                            style={{
+                                position: 'absolute',
+                                bottom: '15px',
+                                right: '12px',
+                                width: '32px',
+                                height: '32px',
+                                borderRadius: '6px',
+                                background: 'rgba(255,255,255,0.85)',
+                                backdropFilter: 'blur(4px)',
+                                border: 'none',
+                                color: '#333',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
+                                transition: 'all 0.2s ease',
+                                opacity: 0.7
+                            }}
+                            onMouseOver={(e) => {
+                                e.currentTarget.style.opacity = '1';
+                                e.currentTarget.style.background = 'rgba(255,255,255,0.95)';
+                            }}
+                            onMouseOut={(e) => {
+                                e.currentTarget.style.opacity = '0.7';
+                                e.currentTarget.style.background = 'rgba(255,255,255,0.85)';
+                            }}
+                        >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                        </button>
                     </div>
                 ))}
             </div>
@@ -95,30 +136,38 @@ const Photography = () => {
             {/* Lightbox Modal - Portaled to Body */}
             {selectedIndex !== null && createPortal(
                 <div
-                    className="modal-overlay"
                     style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
                         opacity: 1,
-                        animation: 'fadeIn 0.2s',
                         zIndex: 10000,
-                        backgroundColor: 'rgba(0,0,0,0.6)',
-                        backdropFilter: 'blur(5px)',
+                        backgroundColor: 'rgba(0,0,0,0.85)',
+                        backdropFilter: 'blur(10px)',
                         transition: 'all 0.3s ease',
-                        paddingRight: showAnalyzer ? '600px' : '0' // Make space for analyzer
+                        padding: '80px 20px 60px 20px',
+                        paddingRight: showAnalyzer ? '620px' : '20px'
                     }}
                     onClick={() => {
                         setSelectedIndex(null);
                         setShowAnalyzer(false);
                     }}
                 >
-                    <div style={{ position: 'relative', maxWidth: '90vw', maxHeight: '90vh' }} onClick={e => e.stopPropagation()}>
+                    <div style={{ position: 'relative', maxWidth: '85vw', maxHeight: 'calc(100vh - 200px)' }} onClick={e => e.stopPropagation()}>
                         <img
                             src={currentImage}
                             alt="Full Screen"
                             style={{
                                 maxWidth: '100%',
-                                maxHeight: '90vh',
+                                maxHeight: 'calc(100vh - 200px)',
                                 borderRadius: '4px',
-                                boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
+                                boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+                                display: 'block'
                             }}
                         />
 

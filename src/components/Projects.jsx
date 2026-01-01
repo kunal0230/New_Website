@@ -8,11 +8,14 @@ const Projects = () => {
     useEffect(() => {
         if (selectedProject) {
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
         } else {
             document.body.style.overflow = 'unset';
+            document.body.classList.remove('modal-open');
         }
         return () => {
             document.body.style.overflow = 'unset';
+            document.body.classList.remove('modal-open');
         };
     }, [selectedProject]);
 
@@ -60,7 +63,23 @@ const Projects = () => {
                         </button>
 
                         <h2 style={{ marginBottom: '0.5rem' }}>{selectedProject.title}</h2>
-                        <p className="text-muted" style={{ marginBottom: '2rem' }}>{selectedProject.summary}</p>
+                        <p className="text-muted" style={{ marginBottom: '1.5rem' }}>{selectedProject.summary}</p>
+
+                        {selectedProject.image && (
+                            <div style={{ marginBottom: '2rem' }}>
+                                <img
+                                    src={selectedProject.image}
+                                    alt={selectedProject.title}
+                                    style={{
+                                        width: '100%',
+                                        maxHeight: '400px',
+                                        objectFit: 'cover',
+                                        borderRadius: '8px',
+                                        border: '1px solid var(--border-color)'
+                                    }}
+                                />
+                            </div>
+                        )}
 
                         <div className="project-details">
                             <DetailSection title="Overview" content={selectedProject.details.overview} />

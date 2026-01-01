@@ -3,6 +3,7 @@
         "id": 0,
         "title": "Stereo Depth Estimation with ESP32-CAM",
         "summary": "Real-time depth map generation using dual ESP32-CAM modules for low-cost 3D perception.",
+        "image": "/project_photos/esp32_sterio_vision.jpg",
         "details": {
             "overview": "Built a stereo vision system using two synchronized ESP32-CAM modules to generate real-time depth maps for robotics and embedded applications.",
             "researchQuestion": "Can low-cost ESP32-CAM modules produce reliable depth estimates for practical embedded vision applications?",
@@ -28,6 +29,7 @@
         "id": 1,
         "title": "Real-Time 3D Relighting System",
         "summary": "Physically-based rendering pipeline with WebGPU for realistic light-matter interaction on 2D photographs.",
+        "image": "/project_photos/3d_relight.png",
         "details": {
             "overview": "Engineered a physically-based rendering (PBR) pipeline using GGX specular distribution, Fresnel-Schlick reflectance, and HBAO (Horizon-Based Ambient Occlusion) to simulate realistic light-matter interaction on 2D photographs.",
             "researchQuestion": "Can we achieve real-time, photorealistic relighting of 2D images using modern GPU compute shaders?",
@@ -99,6 +101,7 @@
         "id": 4,
         "title": "FITLIFE - Exercise Tracking & Guidance",
         "summary": "Smart India Hackathon 2023 Winner. Custom pose estimation and exercise tracking web app.",
+        "image": "/project_photos/FITLIFE_.jpg",
         "details": {
             "overview": "Developed a comprehensive web application for real-time exercise tracking using computer vision. The system provides guidance and feedback to users to ensure proper form.",
             "researchQuestion": "How can browser-based pose estimation be optimized for real-time feedback on commodity hardware?",
@@ -143,25 +146,27 @@
     },
     {
         "id": 6,
-        "title": "Stereo Vision Self-Driving Simulation",
-        "summary": "Depth estimation and navigation using Stereo ESP32-CAM and Machine Learning.",
+        "title": "Self-Driving using Reinforcement Learning",
+        "summary": "Autonomous vehicle navigation trained with Deep Q-Learning in simulated environments.",
         "details": {
-            "overview": "Developed a simulation for autonomous driving using a custom stereo vision setup with ESP32-CAM modules.",
-            "researchQuestion": "Can low-cost ESP32 modules perform reliable stereo depth estimation for navigation?",
+            "overview": "Developed an autonomous driving agent using reinforcement learning techniques, trained in simulation to navigate roads, avoid obstacles, and follow traffic rules.",
+            "researchQuestion": "Can deep reinforcement learning agents learn robust driving policies transferable to real-world scenarios?",
             "challenges": [
-                "Calibration of low-cost cameras",
-                "Synchronization of stereo frames",
-                "Depth estimation processing on limited hardware"
+                "Designing effective reward functions",
+                "Handling sparse reward signals",
+                "Sim-to-real transfer challenges",
+                "Training stability with deep Q-networks"
             ],
-            "methodology": "Integrated ML-based navigation using TensorFlow and OpenCV with depth maps generated from the stereo setup.",
+            "methodology": "Implemented Deep Q-Network (DQN) with experience replay and target networks. Trained the agent in CARLA/custom simulation environment with continuous state space and discrete action space.",
             "technologies": [
-                "ESP32-CAM",
-                "Stereo Vision",
-                "TensorFlow",
-                "OpenCV"
+                "Deep Q-Learning",
+                "PyTorch",
+                "OpenAI Gym",
+                "Reinforcement Learning",
+                "Simulation"
             ],
-            "results": "Functional depth estimation and basic autonomous navigation in simulation.",
-            "futureWork": "Deploying on a physical RC car chassis."
+            "results": "Agent successfully learned to navigate simulated roads with 85%+ success rate on test tracks.",
+            "futureWork": "Implementing PPO and testing on physical RC car platform."
         }
     }
 ]

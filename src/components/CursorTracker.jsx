@@ -384,45 +384,47 @@ const CursorTracker = () => {
                 }}
             />
             {/* Lighting Lab UI */}
-            <div style={{
+            <div className="lighting-lab-ui" style={{
                 position: 'fixed',
                 bottom: '20px',
                 right: '20px',
                 zIndex: 100,
-                background: 'rgba(255, 255, 255, 0.95)',
+                background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
                 padding: isMinimized ? '10px 15px' : '20px',
                 borderRadius: '12px',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                 maxWidth: '320px',
-                border: '1px solid #e0e0e0',
+                border: '1px solid rgba(100, 255, 218, 0.2)',
                 fontFamily: 'var(--font-heading)',
                 backdropFilter: 'blur(10px)',
-                transition: 'all 0.3s ease'
-            }}>
+                transition: 'all 0.3s ease',
+                cursor: isMinimized ? 'pointer' : 'default'
+            }}
+                onClick={() => isMinimized && setIsMinimized(false)}
+            >
                 <div style={{
                     fontSize: '0.8rem',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
                     fontWeight: 700,
                     marginBottom: isMinimized ? '0' : '12px',
-                    color: '#666',
+                    color: 'rgba(255,255,255,0.9)',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between',
-                    minWidth: isMinimized ? '150px' : '280px'
+                    justifyContent: 'space-between'
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span style={{ width: '8px', height: '8px', background: '#2a9d8f', borderRadius: '50%', display: 'inline-block' }}></span>
+                        <span style={{ width: '8px', height: '8px', background: '#64ffda', borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 8px rgba(100, 255, 218, 0.5)' }}></span>
                         Lighting Lab
                     </div>
                     <div style={{ display: 'flex', gap: '8px' }}>
                         {!isMinimized && (
                             <button
-                                onClick={() => setShowDoc(true)}
+                                onClick={(e) => { e.stopPropagation(); setShowDoc(true); }}
                                 style={{
-                                    border: '1px solid #2a9d8f',
+                                    border: '1px solid #64ffda',
                                     background: 'transparent',
-                                    color: '#2a9d8f',
+                                    color: '#64ffda',
                                     fontSize: '0.65rem',
                                     fontWeight: 'bold',
                                     padding: '2px 6px',
@@ -434,11 +436,11 @@ const CursorTracker = () => {
                             </button>
                         )}
                         <button
-                            onClick={() => setIsMinimized(!isMinimized)}
+                            onClick={(e) => { e.stopPropagation(); setIsMinimized(!isMinimized); }}
                             style={{
                                 border: 'none',
                                 background: 'transparent',
-                                color: '#999',
+                                color: 'rgba(255,255,255,0.7)',
                                 cursor: 'pointer',
                                 fontSize: '1rem',
                                 padding: '0 4px'
@@ -462,10 +464,10 @@ const CursorTracker = () => {
                                         fontSize: '0.75rem',
                                         fontWeight: 500,
                                         border: '1px solid',
-                                        borderColor: activeEffect === key ? '#353535' : '#eee',
+                                        borderColor: activeEffect === key ? '#64ffda' : 'rgba(255,255,255,0.15)',
                                         borderRadius: '6px',
-                                        background: activeEffect === key ? '#353535' : '#f8f9fa',
-                                        color: activeEffect === key ? 'white' : '#555',
+                                        background: activeEffect === key ? 'rgba(100, 255, 218, 0.15)' : 'rgba(255,255,255,0.05)',
+                                        color: activeEffect === key ? '#64ffda' : 'rgba(255,255,255,0.7)',
                                         cursor: 'pointer',
                                         transition: 'all 0.2s',
                                         textAlign: 'center'
@@ -478,14 +480,14 @@ const CursorTracker = () => {
 
                         <div style={{
                             fontSize: '0.8rem',
-                            color: '#444',
+                            color: 'rgba(255,255,255,0.8)',
                             lineHeight: '1.5',
-                            background: '#f1f5f9',
+                            background: 'rgba(0,0,0,0.3)',
                             padding: '10px',
                             borderRadius: '6px',
-                            borderLeft: `3px solid ${activeEffect === 'spatial' ? '#00ff00' : '#3c6e71'}`
+                            borderLeft: `3px solid ${activeEffect === 'spatial' ? '#00ff00' : '#64ffda'}`
                         }}>
-                            <strong style={{ display: 'block', marginBottom: '4px', color: '#111' }}>
+                            <strong style={{ display: 'block', marginBottom: '4px', color: '#64ffda' }}>
                                 {EFFECTS[activeEffect].name}
                             </strong>
                             {EFFECTS[activeEffect].desc}

@@ -28,9 +28,9 @@ const Navbar = () => {
       left: 0,
       right: 0,
       zIndex: 999,
-      background: isScrolled ? 'rgba(53, 53, 53, 0.95)' : 'transparent',
+      background: isScrolled ? 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)' : 'transparent',
       backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-      borderBottom: isScrolled ? '1px solid var(--border-color)' : 'none',
+      borderBottom: isScrolled ? '1px solid rgba(100, 255, 218, 0.2)' : 'none',
       transition: 'all 0.3s ease',
       padding: '1.5rem 0'
     }}>
@@ -57,7 +57,7 @@ const Navbar = () => {
                   position: 'relative'
                 }}
               >
-                <span style={{ color: 'var(--accent-primary)', marginRight: '0.25rem', fontSize: '0.85rem' }}>
+                <span style={{ color: '#3b82f6', marginRight: '0.25rem', fontSize: '0.85rem' }}>
                   {String(idx + 1).padStart(2, '0')}.
                 </span>
                 {item.name}
@@ -66,8 +66,8 @@ const Navbar = () => {
           ))}
           <li>
             <a href="/resume.pdf" target="_blank" style={{
-              border: '1px solid var(--accent-primary)',
-              color: 'var(--accent-primary)',
+              border: '1px solid #3b82f6',
+              color: '#3b82f6',
               padding: '0.5rem 1rem',
               borderRadius: '4px',
               fontSize: '0.9rem',
@@ -76,7 +76,7 @@ const Navbar = () => {
               transition: 'all 0.3s ease'
             }}
               onMouseEnter={(e) => {
-                e.target.style.background = 'rgba(42, 157, 143, 0.1)';
+                e.target.style.background = 'rgba(59, 130, 246, 0.15)';
               }}
               onMouseLeave={(e) => {
                 e.target.style.background = 'transparent';

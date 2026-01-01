@@ -330,8 +330,9 @@ button {
   transform: scaleX(1);
 }
 
-/* Hide Lighting Lab when modal is open */
-body.modal-open .lighting-lab-ui {
+/* Hide Lighting Lab and navbar when modal is open */
+body.modal-open .lighting-lab-ui,
+body.modal-open nav {
   display: none !important;
 }
 

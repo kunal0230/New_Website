@@ -35,6 +35,18 @@ const Photography = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [selectedIndex, photos.length]);
 
+    // Add/remove modal-open class when lightbox opens/closes
+    useEffect(() => {
+        if (selectedIndex !== null) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
+        return () => {
+            document.body.classList.remove('modal-open');
+        };
+    }, [selectedIndex]);
+
     const currentImage = selectedIndex !== null ? `/photos/${photos[selectedIndex]}` : null;
 
     return (

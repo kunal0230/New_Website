@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Publications = () => {
     const [selectedPdf, setSelectedPdf] = useState(null);
+
+    // Add/remove modal-open class when PDF viewer opens/closes
+    useEffect(() => {
+        if (selectedPdf) {
+            document.body.classList.add('modal-open');
+        } else {
+            document.body.classList.remove('modal-open');
+        }
+        return () => {
+            document.body.classList.remove('modal-open');
+        };
+    }, [selectedPdf]);
 
     const publications = [
         {

@@ -1,30 +1,36 @@
 [
     {
         "id": 1,
-        "title": "Neural Networks and Deep Learning",
+        "title": "Linear Algebra for Machine Learning and Data Science",
         "organization": "DeepLearning.AI",
-        "date": "Jan 2025"
+        "date": "2024"
     },
     {
         "id": 2,
-        "title": "ML, NLP, and MLOps Bootcamp",
-        "organization": "Udemy",
-        "date": "Sep 2024"
+        "title": "3D Reconstruction - Single Viewpoint",
+        "organization": "Columbia University",
+        "date": "2024"
     },
     {
         "id": 3,
-        "title": "PyTorch for Deep Learning",
-        "organization": "Udemy",
-        "date": "Sep 2024"
+        "title": "Physics of Light and Materials",
+        "organization": "Rice University",
+        "date": "2024"
     },
     {
         "id": 4,
-        "title": "Computer Vision and Image Processing",
-        "organization": "IBM",
-        "date": "Aug 2024"
+        "title": "Neural Networks and Deep Learning",
+        "organization": "DeepLearning.AI",
+        "date": "2024"
     },
     {
         "id": 5,
+        "title": "User Experience & Interaction Design for AR/VR/MR/XR",
+        "organization": "University of Michigan",
+        "date": "2024"
+    },
+    {
+        "id": 6,
         "title": "Understanding Research Methods",
         "organization": "SOAS Univ. of London",
         "date": "2024"

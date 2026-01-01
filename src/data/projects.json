@@ -1,5 +1,30 @@
 [
     {
+        "id": 0,
+        "title": "Stereo Depth Estimation with ESP32-CAM",
+        "summary": "Real-time depth map generation using dual ESP32-CAM modules for low-cost 3D perception.",
+        "details": {
+            "overview": "Built a stereo vision system using two synchronized ESP32-CAM modules to generate real-time depth maps for robotics and embedded applications.",
+            "researchQuestion": "Can low-cost ESP32-CAM modules produce reliable depth estimates for practical embedded vision applications?",
+            "challenges": [
+                "Precise stereo camera calibration",
+                "Frame synchronization between modules",
+                "Disparity computation on constrained hardware",
+                "Rectification and lens distortion correction"
+            ],
+            "methodology": "Implemented stereo calibration using chessboard patterns. Applied Semi-Global Block Matching (SGBM) algorithm for disparity computation. Optimized pipeline for real-time performance on embedded systems.",
+            "technologies": [
+                "ESP32-CAM",
+                "OpenCV",
+                "Stereo Vision",
+                "Python",
+                "Embedded Systems"
+            ],
+            "results": "Achieved real-time depth estimation at 10+ FPS with centimeter-level accuracy for indoor environments.",
+            "futureWork": "Integration with ROS for autonomous navigation and obstacle avoidance."
+        }
+    },
+    {
         "id": 1,
         "title": "Real-Time 3D Relighting System",
         "summary": "Physically-based rendering pipeline with WebGPU for realistic light-matter interaction on 2D photographs.",

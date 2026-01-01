@@ -22,24 +22,24 @@ const Experience = () => {
                         height: '100%'
                     }}>
                         <div style={{ marginBottom: '1rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', marginBottom: '0.5rem' }}>
-                                <h4 style={{ fontSize: '1.2rem', color: 'var(--text-primary)', margin: 0 }}>{exp.role}</h4>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.25rem' }}>
+                                <span style={{
+                                    color: 'var(--accent-primary)',
+                                    fontSize: '1rem',
+                                    fontWeight: 500
+                                }}>
+                                    {exp.company}
+                                </span>
                                 <span style={{
                                     color: 'var(--text-muted)',
-                                    fontSize: '0.85rem',
+                                    fontSize: '0.8rem',
                                     fontFamily: 'monospace',
                                     whiteSpace: 'nowrap'
                                 }}>
                                     {exp.period}
                                 </span>
                             </div>
-                            <span style={{
-                                color: 'var(--accent-primary)',
-                                fontSize: '1rem',
-                                fontWeight: 500
-                            }}>
-                                {exp.company}
-                            </span>
+                            <h4 style={{ fontSize: '1.1rem', color: 'var(--text-primary)', margin: 0, lineHeight: 1.3 }}>{exp.role}</h4>
                         </div>
 
                         <p style={{

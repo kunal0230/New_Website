@@ -1,5 +1,19 @@
 [
     {
+        "id": 0,
+        "company": "Orlume Vision Labs",
+        "role": "Co-Founder & Lead Software Engineer",
+        "period": "Jun 2025 - Present",
+        "description": "Co-founded an AI-powered photo editing platform. Leading software architecture and development of computer vision algorithms for intelligent image enhancement and processing.",
+        "technologies": [
+            "Computer Vision",
+            "AI/ML",
+            "React",
+            "Full Stack",
+            "Product Development"
+        ]
+    },
+    {
         "id": 1,
         "company": "Saraswati College of Engineering",
         "role": "Machine Learning Research Assistant",

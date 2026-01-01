@@ -1,6 +1,77 @@
 [
     {
         "id": 1,
+        "title": "Real-Time 3D Relighting System",
+        "summary": "Physically-based rendering pipeline with WebGPU for realistic light-matter interaction on 2D photographs.",
+        "details": {
+            "overview": "Engineered a physically-based rendering (PBR) pipeline using GGX specular distribution, Fresnel-Schlick reflectance, and HBAO (Horizon-Based Ambient Occlusion) to simulate realistic light-matter interaction on 2D photographs.",
+            "researchQuestion": "Can we achieve real-time, photorealistic relighting of 2D images using modern GPU compute shaders?",
+            "challenges": [
+                "Implementing physically accurate lighting models in WebGPU",
+                "Dithered ray-marching for artifact-free soft shadows",
+                "Integrating ML depth estimation with graphics pipeline"
+            ],
+            "methodology": "Implemented a dithered ray-marching soft shadow algorithm (48-step) with pseudo-random per-pixel offset and 9-tap Gaussian depth smoothing. Integrated monocular depth estimation (Depth Anything V2) and semantic segmentation (SegFormer B0) via Transformers.js for real-time 3D scene reconstruction from single 2D images.",
+            "technologies": [
+                "WebGPU",
+                "WebGL2",
+                "GLSL",
+                "Three.js",
+                "Transformers.js"
+            ],
+            "results": "Real-time 3D relighting with realistic shadows and reflections from single 2D images.",
+            "futureWork": "Expanding to video relighting and global illumination support."
+        }
+    },
+    {
+        "id": 2,
+        "title": "Ultra-Low Latency Virtual Piano",
+        "summary": "Vision-driven HCI with <5ms latency markerless hand tracking for seamless musical interaction.",
+        "details": {
+            "overview": "Created an interactive application that allows users to play a virtual piano using hand movements captured by a webcam with ultra-low latency.",
+            "researchQuestion": "How to achieve sub-5ms latency in vision-based musical instrument interfaces?",
+            "challenges": [
+                "Precise fingertip detection with minimal latency",
+                "Velocity-based triggering for expressive playing",
+                "Bridging computer vision and tactile musical expression"
+            ],
+            "methodology": "Engineered a markerless motion capture system tracking 21 hand landmarks with <5ms latency. Developed velocity-based triggering algorithms to simulate key-press intensity, bridging the gap between computer vision tracking and tactile musical expression.",
+            "technologies": [
+                "OpenCV",
+                "MediaPipe",
+                "aPipe",
+                "Python",
+                "HCI"
+            ],
+            "results": "Real-time responsive virtual instrument with <5ms latency enabling seamless musical interaction.",
+            "futureWork": "Adding gesture control for volume, sustain pedal, and multi-instrument support."
+        }
+    },
+    {
+        "id": 3,
+        "title": "Sparse-View Dynamic 3D Reconstruction",
+        "summary": "Low-cost volumetric capture using Gaussian Splatting with heterogeneous smartphone array.",
+        "details": {
+            "overview": "Designed a low-cost volumetric capture pipeline using a heterogeneous array of three smartphone sensors for dynamic 3D reconstruction.",
+            "researchQuestion": "Can consumer smartphones replace expensive multi-camera rigs for dynamic 3D capture?",
+            "challenges": [
+                "Temporal synchronization of un-genlocked devices",
+                "Color calibration across different camera ISPs",
+                "Sparse-view reconstruction quality"
+            ],
+            "methodology": "Solved temporal synchronization of un-genlocked devices using audio-waveform alignment algorithms. Implemented histogram matching to unify RGB distributions across disparate camera ISPs.",
+            "technologies": [
+                "Python",
+                "Google Colab",
+                "Gaussian Splatting",
+                "3D Reconstruction"
+            ],
+            "results": "Functional dynamic 3D reconstruction from just three smartphone cameras.",
+            "futureWork": "Real-time streaming and integration with AR/VR displays."
+        }
+    },
+    {
+        "id": 4,
         "title": "FITLIFE - Exercise Tracking & Guidance",
         "summary": "Smart India Hackathon 2023 Winner. Custom pose estimation and exercise tracking web app.",
         "details": {
@@ -11,7 +82,7 @@
                 "Accurate form correction logic",
                 "Cross-device compatibility"
             ],
-            "methodology": " Utilized custom ML models for pose detection and analyzed keypoints to provide corrective feedback.",
+            "methodology": "Utilized custom ML models for pose detection and analyzed keypoints to provide corrective feedback.",
             "technologies": [
                 "Machine Learning",
                 "Pose Estimation",
@@ -23,7 +94,7 @@
         }
     },
     {
-        "id": 2,
+        "id": 5,
         "title": "Polyp Segmentation Using UNet 3+",
         "summary": "Medical imaging segmentation achieving 92% IoU and 90% Dice Coefficient.",
         "details": {
@@ -46,7 +117,7 @@
         }
     },
     {
-        "id": 3,
+        "id": 6,
         "title": "Stereo Vision Self-Driving Simulation",
         "summary": "Depth estimation and navigation using Stereo ESP32-CAM and Machine Learning.",
         "details": {
@@ -66,121 +137,6 @@
             ],
             "results": "Functional depth estimation and basic autonomous navigation in simulation.",
             "futureWork": "Deploying on a physical RC car chassis."
-        }
-    },
-    {
-        "id": 4,
-        "title": "Virtual Piano - Interactive Music App",
-        "summary": "Computer vision-based virtual piano using hand tracking and segmentation.",
-        "details": {
-            "overview": "Created an interactive application that allows users to play a virtual piano using hand movements captured by a webcam.",
-            "researchQuestion": "How to map spatial hand coordinates to musical notes with low latency?",
-            "challenges": [
-                "Precise fingertip detection",
-                "Latency reduction for musical timing",
-                "Handling occlusion"
-            ],
-            "methodology": "Used OpenCV and MediaPipe for hand segmentation and movement detection to trigger dynamic screen-based interactions.",
-            "technologies": [
-                "OpenCV",
-                "MediaPipe",
-                "Computer Vision",
-                "HCI"
-            ],
-            "results": "Real-time responsive virtual instrument.",
-            "futureWork": "Adding gesture control for volume and other effects."
-        }
-    },
-    {
-        "id": 5,
-        "title": "FITLIFE - Exercise Tracking & Guidance (V2)",
-        "summary": "Smart India Hackathon 2023 Winner. Custom pose estimation and exercise tracking web app.",
-        "details": {
-            "overview": "Developed a comprehensive web application for real-time exercise tracking using computer vision. The system provides guidance and feedback to users to ensure proper form.",
-            "researchQuestion": "How can browser-based pose estimation be optimized for real-time feedback on commodity hardware?",
-            "challenges": [
-                "Real-time pose estimation latency in browser",
-                "Accurate form correction logic",
-                "Cross-device compatibility"
-            ],
-            "methodology": " Utilized custom ML models for pose detection and analyzed keypoints to provide corrective feedback.",
-            "technologies": [
-                "Machine Learning",
-                "Pose Estimation",
-                "Web Development",
-                "Python"
-            ],
-            "results": "Won Smart India Hackathon 2023. Accurate counting and form analysis for multiple exercises.",
-            "futureWork": "Expanding to more complex compound movements and mobile app integration."
-        }
-    },
-    {
-        "id": 6,
-        "title": "Polyp Segmentation Using UNet 3+ (Extended)",
-        "summary": "Medical imaging segmentation achieving 92% IoU and 90% Dice Coefficient.",
-        "details": {
-            "overview": "Built a refined UNet 3+ architecture for the precise segmentation of polyps in colonoscopy images, critical for early cancer detection.",
-            "researchQuestion": "Does UNet 3+ offer significant improvements over standard UNet for variable-sized polyp segmentation?",
-            "challenges": [
-                "High class imbalance in medical datasets",
-                "Variability in polyp size and texture",
-                "Generalization to unseen data"
-            ],
-            "methodology": "Implemented UNet 3+ with deep supervision. Preprocessed medical datasets to normalize lighting and scale.",
-            "technologies": [
-                "TensorFlow",
-                "UNet 3+",
-                "Medical Imaging",
-                "Python"
-            ],
-            "results": "Achieved 92% IoU and 90% Dice Coefficient, outperforming baseline models.",
-            "futureWork": "Testing on video data for real-time colonoscopy assistance."
-        }
-    },
-    {
-        "id": 7,
-        "title": "Stereo Vision Self-Driving Simulation (Advanced)",
-        "summary": "Depth estimation and navigation using Stereo ESP32-CAM and Machine Learning.",
-        "details": {
-            "overview": "Developed a simulation for autonomous driving using a custom stereo vision setup with ESP32-CAM modules.",
-            "researchQuestion": "Can low-cost ESP32 modules perform reliable stereo depth estimation for navigation?",
-            "challenges": [
-                "Calibration of low-cost cameras",
-                "Synchronization of stereo frames",
-                "Depth estimation processing on limited hardware"
-            ],
-            "methodology": "Integrated ML-based navigation using TensorFlow and OpenCV with depth maps generated from the stereo setup.",
-            "technologies": [
-                "ESP32-CAM",
-                "Stereo Vision",
-                "TensorFlow",
-                "OpenCV"
-            ],
-            "results": "Functional depth estimation and basic autonomous navigation in simulation.",
-            "futureWork": "Deploying on a physical RC car chassis."
-        }
-    },
-    {
-        "id": 8,
-        "title": "Virtual Piano - Interactive Music App (Pro)",
-        "summary": "Computer vision-based virtual piano using hand tracking and segmentation.",
-        "details": {
-            "overview": "Created an interactive application that allows users to play a virtual piano using hand movements captured by a webcam.",
-            "researchQuestion": "How to map spatial hand coordinates to musical notes with low latency?",
-            "challenges": [
-                "Precise fingertip detection",
-                "Latency reduction for musical timing",
-                "Handling occlusion"
-            ],
-            "methodology": "Used OpenCV and MediaPipe for hand segmentation and movement detection to trigger dynamic screen-based interactions.",
-            "technologies": [
-                "OpenCV",
-                "MediaPipe",
-                "Computer Vision",
-                "HCI"
-            ],
-            "results": "Real-time responsive virtual instrument.",
-            "futureWork": "Adding gesture control for volume and other effects."
         }
     }
 ]

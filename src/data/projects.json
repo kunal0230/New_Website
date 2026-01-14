@@ -31,12 +31,12 @@
         "id": 1,
         "title": "Real-Time 3D Relighting System",
         "domain": "WEBGPU ENGINEERING",
-        "summary": "Physically-based rendering pipeline with WebGPU for realistic light-matter interaction on 2D photographs.",
+        "summary": "Physics-based rendering pipeline with WebGPU for realistic light-matter interaction on 2D photographs.",
         "image": "/project_photos/3d_relight.png",
         "link": "https://orlume.io/",
         "github": "https://github.com/kunal0230/Orlume",
         "details": {
-            "overview": "Engineered a physically-based rendering (PBR) pipeline using GGX specular distribution, Fresnel-Schlick reflectance, and HBAO (Horizon-Based Ambient Occlusion) to simulate realistic light-matter interaction on 2D photographs.",
+            "overview": "Engineered a physics-based rendering (PBR) pipeline using GGX specular distribution, Fresnel-Schlick reflectance, and HBAO (Horizon-Based Ambient Occlusion) to simulate realistic light-matter interaction on 2D photographs.",
             "researchQuestion": "Can we achieve real-time, photorealistic relighting of 2D images using modern GPU compute shaders?",
             "challenges": [
                 "Implementing physically accurate lighting models in WebGPU",

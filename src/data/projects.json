@@ -1,35 +1,40 @@
 [
     {
-        "id": 0,
-        "title": "Stereo Depth Estimation with ESP32-CAM",
-        "summary": "Real-time depth map generation using dual ESP32-CAM modules for low-cost 3D perception.",
-        "image": "/project_photos/esp32_sterio_vision.jpg",
+        "id": 9,
+        "title": "Real-Time Gaze-Adaptive LOD Renderer",
+        "domain": "WEBGL & COMPUTER VISION",
+        "summary": "Browser-based foveated rendering system using real-time eye tracking.",
+        "image": "/project_photos/gaze_renderer.png",
+        "link": "https://real-time-gaze-adaptive-lod-rendere-chi.vercel.app/",
+        "github": "https://github.com/kunal0230/Real-Time-Gaze-Adaptive-LOD-Renderer",
         "details": {
-            "overview": "Built a stereo vision system using two synchronized ESP32-CAM modules to generate real-time depth maps for robotics and embedded applications.",
-            "researchQuestion": "Can low-cost ESP32-CAM modules produce reliable depth estimates for practical embedded vision applications?",
+            "overview": "A browser-based foveated rendering system that applies game-style Level of Detail (LOD) based on real-time eye tracking. It uses a camera feed to track the user's gaze and dynamically adjusts the rendering quality of a WebGL2 raymarched scene—rendering high detail where the user is looking and lower detail in the periphery.",
+            "researchQuestion": "Can web-based eye tracking be fast and accurate enough for effective foveated rendering?",
             "challenges": [
-                "Precise stereo camera calibration",
-                "Frame synchronization between modules",
-                "Disparity computation on constrained hardware",
-                "Rectification and lens distortion correction"
+                "Minimizing eye-tracking latency",
+                "Seamlessiy blending LOD zones to avoid visual artifacts",
+                "Optimizing the WebGL2 raymarching shader"
             ],
-            "methodology": "Implemented stereo calibration using chessboard patterns. Applied Semi-Global Block Matching (SGBM) algorithm for disparity computation. Optimized pipeline for real-time performance on embedded systems.",
+            "methodology": "Used MediaPipe Face Mesh for robust gaze tracking, utilizing Kalman Filters to smooth input data and reduce jitter. Implemented a custom WebGL2 raymarching shader that dynamically adjusts step size and level of detail based on the user's focus point, optimizing performance.",
             "technologies": [
-                "ESP32-CAM",
-                "OpenCV",
-                "Stereo Vision",
-                "Python",
-                "Embedded Systems"
+                "WebGL2",
+                "GLSL",
+                "MediaPipe",
+                "React",
+                "JavaScript"
             ],
-            "results": "Achieved real-time depth estimation at 10+ FPS with centimeter-level accuracy for indoor environments.",
-            "futureWork": "Integration with ROS for autonomous navigation and obstacle avoidance."
+            "results": "Achieved significant GPU compute savings (~45% reduction in fragment processing) while maintaining perceptual visual fidelity in the foveal region. Demonstrated smooth frame rates on standard integrated graphics.",
+            "futureWork": "Integrating with WebXR APIs for VR headset support and eye-tracking hardware integration."
         }
     },
     {
         "id": 1,
         "title": "Real-Time 3D Relighting System",
+        "domain": "WEBGPU ENGINEERING",
         "summary": "Physically-based rendering pipeline with WebGPU for realistic light-matter interaction on 2D photographs.",
         "image": "/project_photos/3d_relight.png",
+        "link": "https://orlume.io/",
+        "github": "https://github.com/kunal0230/Orlume",
         "details": {
             "overview": "Engineered a physically-based rendering (PBR) pipeline using GGX specular distribution, Fresnel-Schlick reflectance, and HBAO (Horizon-Based Ambient Occlusion) to simulate realistic light-matter interaction on 2D photographs.",
             "researchQuestion": "Can we achieve real-time, photorealistic relighting of 2D images using modern GPU compute shaders?",
@@ -38,45 +43,156 @@
                 "Dithered ray-marching for artifact-free soft shadows",
                 "Integrating ML depth estimation with graphics pipeline"
             ],
-            "methodology": "Implemented a dithered ray-marching soft shadow algorithm (48-step) with pseudo-random per-pixel offset and 9-tap Gaussian depth smoothing. Integrated monocular depth estimation (Depth Anything V2) and semantic segmentation (SegFormer B0) via Transformers.js for real-time 3D scene reconstruction from single 2D images.",
+            "methodology": "Implemented a deferred rendering pipeline using WebGPU compute shaders. Utilized dithered ray-marching (48-step) for soft shadows and a 9-tap Gaussian blur for depth smoothing. Integrated 'Depth Anything V2' for monocular depth estimation and 'SegFormer' for semantic masks to enable realistic scene relighting.",
             "technologies": [
                 "WebGPU",
-                "WebGL2",
-                "GLSL",
+                "React",
                 "Three.js",
-                "Transformers.js"
+                "Transformers.js",
+                "GLSL"
             ],
-            "results": "Real-time 3D relighting with realistic shadows and reflections from single 2D images.",
-            "futureWork": "Expanding to video relighting and global illumination support."
+            "results": "Capable of real-time 3D relighting of standard 2D images at 60fps on modern GPUs, with physically plausible partial global illumination effects.",
+            "futureWork": "Expanding to video relighting sequences and optimizing depth inference for mobile devices."
+        }
+    },
+    {
+        "id": 8,
+        "title": "DriveInsight",
+        "domain": "MACOS APP DEVELOPMENT",
+        "summary": "Premium macOS storage visualizer and analyzer with a glassmorphic UI.",
+        "image": "/project_photos/driveinsight.png",
+        "github": "https://github.com/kunal0230/DriveInsight",
+        "details": {
+            "overview": "A premium, smart macOS storage visualizer and analyzer. It provides deep insights into disk usage through a modern, glassmorphic 'Pro' interface, helping users understand their storage distribution with visual charts and detailed breakdowns.",
+            "researchQuestion": "How can we visualize complex file system hierarchies to make storage management intuitive?",
+            "challenges": [
+                "Efficiently scanning millions of files",
+                "Rendering real-time visualizations of large datasets",
+                "Creating a native-feeling macOS UI with web technologies"
+            ],
+            "methodology": "Built using Electron for cross-platform system access, utilizing Node.js streams for efficient non-blocking file scanning. The React frontend employs virtualized lists and Canvas-based charting to render large datasets smoothly without UI freezing.",
+            "technologies": [
+                "Electron",
+                "React",
+                "Node.js",
+                "Chart.js",
+                "TypeScript"
+            ],
+            "results": "Developed a high-performance desktop tool capable of visualizing 100k+ files in seconds with a responsive, native-feeling macOS interface.",
+            "futureWork": "Implementing automated cleanup recommendations using machine learning heuristics and cloud storage APIs."
+        }
+    },
+    {
+        "id": 7,
+        "title": "FILESCENTER",
+        "domain": "FULL STACK ENGINEERING",
+        "summary": "Privacy-first online tools suite (50+ tools) for PDF, image, and text processing.",
+        "image": "/project_photos/filecenter.png",
+        "link": "https://www.filecenter.app/",
+        "github": "https://github.com/kunal0230/FILESCENTER",
+        "details": {
+            "overview": "A comprehensive collection of 50+ free, privacy-first online tools designed for various tasks including PDF manipulation (merge, split, compress), image processing, text tools, developer utilities (JSON formatter, UUID generator), and calculators. The platform focuses on privacy by performing all processing client-side in the browser.",
+            "researchQuestion": "Can we provide a full suite of file manipulation tools that runs entirely client-side to ensure user privacy?",
+            "challenges": [
+                "Handling large files in the browser memory",
+                "Implementing complex PDF operations client-side",
+                "Ensuring consistent performance across devices"
+            ],
+            "methodology": "Leveraged WebAssembly and modern browser APIs to port heavy processing libraries to the client. Designed a modular architecture to load only necessary code for each tool.",
+            "technologies": [
+                "Next.js",
+                "WebAssembly",
+                "React",
+                "TypeScript",
+                "Tailwind CSS"
+            ],
+            "results": "Successfully deployed over 50 tools with 100% client-side privacy and fast execution.",
+            "futureWork": "Adding offline support (PWA) and more specialized developer tools."
+        }
+    },
+    {
+        "id": 6,
+        "title": "Self-Driving using Reinforcement Learning",
+        "domain": "REINFORCEMENT LEARNING",
+        "summary": "Autonomous vehicle navigation trained with Deep Q-Learning in simulated environments.",
+        "details": {
+            "overview": "Developed an autonomous driving agent using reinforcement learning techniques, trained in simulation to navigate roads, avoid obstacles, and follow traffic rules.",
+            "researchQuestion": "Can deep reinforcement learning agents learn robust driving policies transferable to real-world scenarios?",
+            "challenges": [
+                "Designing effective reward functions",
+                "Handling sparse reward signals",
+                "Sim-to-real transfer challenges",
+                "Training stability with deep Q-networks"
+            ],
+            "methodology": "Implemented Deep Q-Network (DQN) with experience replay and target networks. Trained the agent in CARLA/custom simulation environment with continuous state space and discrete action space.",
+            "technologies": [
+                "Deep Q-Learning",
+                "PyTorch",
+                "OpenAI Gym",
+                "Reinforcement Learning",
+                "Simulation"
+            ],
+            "results": "Agent successfully learned to navigate simulated roads with 85%+ success rate on test tracks.",
+            "futureWork": "Implementing PPO and testing on physical RC car platform."
         }
     },
     {
         "id": 2,
         "title": "Ultra-Low Latency Virtual Piano",
+        "domain": "HCI & COMPUTER VISION",
         "summary": "Vision-driven HCI with <5ms latency markerless hand tracking for seamless musical interaction.",
+        "github": "https://github.com/kunal0230/Virtual_Piano_With_Computer_Vision",
+        "video": "https://www.youtube.com/shorts/ZdxvdxJ5CQM",
         "details": {
-            "overview": "Created an interactive application that allows users to play a virtual piano using hand movements captured by a webcam with ultra-low latency.",
-            "researchQuestion": "How to achieve sub-5ms latency in vision-based musical instrument interfaces?",
+            "overview": "Created an interactive application that allows users to play a virtual piano using hand movements captured by a webcam with real-time processing.",
+            "researchQuestion": "How to minimize processing latency in vision-based musical interfaces to ensure playability?",
             "challenges": [
-                "Precise fingertip detection with minimal latency",
-                "Velocity-based triggering for expressive playing",
-                "Bridging computer vision and tactile musical expression"
+                "Optimizing inference time for lower latency",
+                "Velocity estimation from 2D camera feeds",
+                "Mapping spatial coordinates to musical notes accurately"
             ],
-            "methodology": "Engineered a markerless motion capture system tracking 21 hand landmarks with <5ms latency. Developed velocity-based triggering algorithms to simulate key-press intensity, bridging the gap between computer vision tracking and tactile musical expression.",
+            "methodology": "Engineered a markerless motion capture system using MediaPipe Hands. Optimized the pipeline to achieve <10ms inference time per frame, ensuring that total system latency is bounded effectively by the camera framerate (30/60fps). Implemented velocity-based triggering algorithms to simulate key-press intensity.",
             "technologies": [
+                "Python",
                 "OpenCV",
                 "MediaPipe",
-                "aPipe",
-                "Python",
-                "HCI"
+                "NumPy",
+                "PyAudio"
             ],
-            "results": "Real-time responsive virtual instrument with <5ms latency enabling seamless musical interaction.",
+            "results": "Real-time responsive virtual instrument with minimal processing overhead, enabling distinct and expressive musical interaction.",
             "futureWork": "Adding gesture control for volume, sustain pedal, and multi-instrument support."
+        }
+    },
+    {
+        "id": 4,
+        "title": "FITLIFE - Exercise Tracking & Guidance",
+        "domain": "WEB & MACHINE LEARNING",
+        "summary": "Smart India Hackathon 2023 Winner. Custom pose estimation and exercise tracking web app.",
+        "image": "/project_photos/FITLIFE_.jpg",
+        "github": "https://github.com/kunal0230/FITLIFE",
+        "details": {
+            "overview": "Developed a comprehensive web application for real-time exercise tracking using computer vision. The system provides guidance and feedback to users to ensure proper form.",
+            "researchQuestion": "How can browser-based pose estimation be optimized for real-time feedback on commodity hardware?",
+            "challenges": [
+                "Real-time pose estimation latency in browser",
+                "Accurate form correction logic",
+                "Cross-device compatibility"
+            ],
+            "methodology": "Utilized custom ML models for pose detection and analyzed keypoints to provide corrective feedback.",
+            "technologies": [
+                "TensorFlow",
+                "OpenCV",
+                "React",
+                "Python"
+            ],
+            "results": "Won Smart India Hackathon 2023. Accurate counting and form analysis for multiple exercises.",
+            "futureWork": "Expanding to more complex compound movements and mobile app integration."
         }
     },
     {
         "id": 3,
         "title": "Sparse-View Dynamic 3D Reconstruction",
+        "domain": "3D RECONSTRUCTION",
         "summary": "Low-cost volumetric capture using Gaussian Splatting with heterogeneous smartphone array.",
         "details": {
             "overview": "Designed a low-cost volumetric capture pipeline using a heterogeneous array of three smartphone sensors for dynamic 3D reconstruction.",
@@ -98,33 +214,11 @@
         }
     },
     {
-        "id": 4,
-        "title": "FITLIFE - Exercise Tracking & Guidance",
-        "summary": "Smart India Hackathon 2023 Winner. Custom pose estimation and exercise tracking web app.",
-        "image": "/project_photos/FITLIFE_.jpg",
-        "details": {
-            "overview": "Developed a comprehensive web application for real-time exercise tracking using computer vision. The system provides guidance and feedback to users to ensure proper form.",
-            "researchQuestion": "How can browser-based pose estimation be optimized for real-time feedback on commodity hardware?",
-            "challenges": [
-                "Real-time pose estimation latency in browser",
-                "Accurate form correction logic",
-                "Cross-device compatibility"
-            ],
-            "methodology": "Utilized custom ML models for pose detection and analyzed keypoints to provide corrective feedback.",
-            "technologies": [
-                "Machine Learning",
-                "Pose Estimation",
-                "Web Development",
-                "Python"
-            ],
-            "results": "Won Smart India Hackathon 2023. Accurate counting and form analysis for multiple exercises.",
-            "futureWork": "Expanding to more complex compound movements and mobile app integration."
-        }
-    },
-    {
         "id": 5,
         "title": "Polyp Segmentation Using UNet 3+",
+        "domain": "MEDICAL AI",
         "summary": "Medical imaging segmentation achieving 92% IoU and 90% Dice Coefficient.",
+        "github": "https://github.com/kunal0230/Polyp-Segmentation-Using-UNet-3-with-TensorFlow",
         "details": {
             "overview": "Built a refined UNet 3+ architecture for the precise segmentation of polyps in colonoscopy images, critical for early cancer detection.",
             "researchQuestion": "Does UNet 3+ offer significant improvements over standard UNet for variable-sized polyp segmentation?",
@@ -145,28 +239,31 @@
         }
     },
     {
-        "id": 6,
-        "title": "Self-Driving using Reinforcement Learning",
-        "summary": "Autonomous vehicle navigation trained with Deep Q-Learning in simulated environments.",
+        "id": 0,
+        "title": "Stereo Depth Estimation with ESP32-CAM",
+        "domain": "EMBEDDED VISION",
+        "summary": "Real-time depth map generation using dual ESP32-CAM modules for low-cost 3D perception.",
+        "image": "/project_photos/esp32_sterio_vision.jpg",
+        "github": "https://github.com/kunal0230/Distance_Estimation_Using_Stereo_ESP32-CAM",
         "details": {
-            "overview": "Developed an autonomous driving agent using reinforcement learning techniques, trained in simulation to navigate roads, avoid obstacles, and follow traffic rules.",
-            "researchQuestion": "Can deep reinforcement learning agents learn robust driving policies transferable to real-world scenarios?",
+            "overview": "Built a stereo vision system using two synchronized ESP32-CAM modules to generate real-time depth maps for robotics and embedded applications.",
+            "researchQuestion": "Can low-cost ESP32-CAM modules produce reliable depth estimates for practical embedded vision applications?",
             "challenges": [
-                "Designing effective reward functions",
-                "Handling sparse reward signals",
-                "Sim-to-real transfer challenges",
-                "Training stability with deep Q-networks"
+                "Precise stereo camera calibration",
+                "Frame synchronization between modules",
+                "Disparity computation on constrained hardware",
+                "Rectification and lens distortion correction"
             ],
-            "methodology": "Implemented Deep Q-Network (DQN) with experience replay and target networks. Trained the agent in CARLA/custom simulation environment with continuous state space and discrete action space.",
+            "methodology": "Implemented stereo calibration using chessboard patterns. Applied Semi-Global Block Matching (SGBM) algorithm for disparity computation. Optimized pipeline for real-time performance on embedded systems.",
             "technologies": [
-                "Deep Q-Learning",
-                "PyTorch",
-                "OpenAI Gym",
-                "Reinforcement Learning",
-                "Simulation"
+                "ESP32-CAM",
+                "OpenCV",
+                "Stereo Vision",
+                "Python",
+                "Embedded Systems"
             ],
-            "results": "Agent successfully learned to navigate simulated roads with 85%+ success rate on test tracks.",
-            "futureWork": "Implementing PPO and testing on physical RC car platform."
+            "results": "Achieved real-time depth estimation at 10+ FPS with centimeter-level accuracy for indoor environments.",
+            "futureWork": "Integration with ROS for autonomous navigation and obstacle avoidance."
         }
     }
 ]
